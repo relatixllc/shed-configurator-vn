@@ -23,6 +23,7 @@
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.0",
     "vinext": "latest",
-    "vite": "^7.0.0"
+    "vite": "^7.0.0",
+    "wrangler": "^4.73.0"
   }
 }
