@@ -589,3 +589,147 @@ html[data-text="sm"] .wg-head .wlabel { font-size: 0.68rem; }
 html[data-text="lg"] .wg-head .wlabel { font-size: 0.95rem; }
 html[data-text="sm"] .wg-head .wrange { font-size: 0.55rem; }
 html[data-text="lg"] .wg-head .wrange { font-size: 0.82rem; }
+
+/* ── Floor Plan Page ── */
+.fp-page {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.65;
+  padding: 0 0 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.fp-header {
+  padding: 2.5rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.fp-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.fp-header p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+.fp-badge-row { margin-top: 0.6rem; }
+.fp-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-text-muted);
+}
+.fp-plan-section { padding: 1rem 0.5rem 0; }
+.fp-rotate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0 auto 10px;
+  padding: 10px 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.833rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.fp-rotate-btn:hover, .fp-rotate-btn:active { background: var(--color-bg-hover); }
+.fp-ico { width: 18px; height: 18px; transition: transform .3s; }
+.fp-rotate-btn.on .fp-ico { transform: rotate(90deg); }
+.fp-plan-wrap { padding: 0 0.25rem; }
+.fp-plan-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: all .3s ease;
+}
+.fp-footer-plan {
+  text-align: center;
+  padding: 14px 1rem 0;
+  font-family: 'JetBrains Mono', monospace;
+}
+.fp-footer-plan-t { font-size: 0.889rem; font-weight: 700; color: var(--color-text); }
+.fp-footer-plan-s { font-size: 0.611rem; font-weight: 500; color: var(--color-text-faint); margin-top: 3px; }
+.fp-legend-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 10px 1rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.611rem;
+  color: var(--color-text-faint);
+}
+.fp-legend-row span { display: flex; align-items: center; gap: 5px; }
+.fp-legend-sw {
+  width: 16px; height: 11px; border-radius: 2px;
+  border: 1px solid var(--color-border); flex-shrink: 0;
+}
+.fp-section { padding: 1.5rem; }
+.fp-section + .fp-section { border-top: 1px solid var(--color-border); }
+.fp-section h2 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.9rem; }
+.fp-specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+@media (max-width: 420px) { .fp-specs-grid { grid-template-columns: 1fr; } }
+.fp-spec-card { background: var(--color-surface); border-radius: 10px; padding: 0.9rem 1.1rem; }
+.fp-spec-label {
+  font-size: 0.7rem; font-weight: 500; color: var(--color-text-faint);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.fp-spec-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem; font-weight: 500; margin-top: 0.2rem;
+}
+.fp-notes-list { list-style: none; counter-reset: note; padding: 0; }
+.fp-notes-list li {
+  counter-increment: note;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.fp-notes-list li:last-child { border-bottom: none; }
+.fp-notes-list li::before {
+  content: counter(note);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--color-surface);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-right: 0.65rem;
+  vertical-align: middle;
+}
+.fp-footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.7rem;
+  color: var(--color-text-faint);
+  border-top: 1px solid var(--color-border);
+}
+.shelf-hl { cursor: pointer; transition: stroke .15s, stroke-width .15s; }
+.loft-area { cursor: pointer; }
+.wb-area { cursor: pointer; }
+.wb-area:hover rect:first-child { stroke: #c8553d; stroke-width: 3; }
+.loft-area:hover { opacity: 0.9; }
+.mower-area { cursor: pointer; }
