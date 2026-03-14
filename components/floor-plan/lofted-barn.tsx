@@ -536,6 +536,7 @@ export function LoftedBarn() {
 
         <div className="fp-footer-plan">
           <div className="fp-footer-plan-t">16' × 36' LOFTED BARN - 2 LOFTS 2 WINDOWS — FLOOR PLAN</div>
+          <div className="fp-footer-plan-s">Area: {16 * 36} Square Feet + {2 * 4 * 16} Sq Feet Loft Space = {16 * 36 + 2 * 4 * 16} Sq Feet</div>
           <div className="fp-footer-plan-s">2×6 FRAMING @ 16" O.C. · HOVER OVER ITEMS FOR DETAILS</div>
         </div>
 
