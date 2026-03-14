@@ -47,7 +47,7 @@ export function StyleSelector({
             className={`help-btn ${helpChoice === "affordable" ? "active" : ""}`}
             onClick={() => onHelpChoose("affordable")}
           >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke={helpChoice === "affordable" ? "currentColor" : "#1D9E75"} strokeWidth="1.5">
               <path d="M12 2v20M6 6h8a4 4 0 010 8H6" />
               <path d="M8 14h8a4 4 0 010 8H6" />
             </svg>
@@ -57,7 +57,7 @@ export function StyleSelector({
             className={`help-btn ${helpChoice === "space" ? "active" : ""}`}
             onClick={() => onHelpChoose("space")}
           >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke={helpChoice === "space" ? "currentColor" : "#1D9E75"} strokeWidth="1.5">
               <path d="M3 21V7l9-5 9 5v14" />
               <path d="M9 21V12h6v9" />
             </svg>

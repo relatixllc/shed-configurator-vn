@@ -21,7 +21,7 @@ import { ColorPicker } from "./color-picker/color-picker";
 export default function ShedConfigurator() {
   // ── Theme state ──
   const [themeMode, setThemeMode] = useState<ThemeMode>("light");
-  const [textSize, setTextSize] = useState<TextSize>("md");
+  const [textSize, setTextSize] = useState<TextSize>("lg");
 
   // ── Style state ──
   const [selectedStyle, setSelectedStyle] = useState<number | null>(null);

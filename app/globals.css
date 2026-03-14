@@ -11,8 +11,8 @@
   --color-surface-dim: #f1efe8;
   --color-border: #e0dfdb;
   --color-text: #1a1a1a;
-  --color-text-muted: #666;
-  --color-text-faint: #999;
+  --color-text-muted: #333;
+  --color-text-faint: #555;
 
   --color-pill-teal-bg: #E1F5EE;
   --color-pill-teal-text: #085041;
@@ -117,8 +117,8 @@ body {
 /* ── Style cards ───────────────────────────────────────────── */
 .styles {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
-  gap: 4px;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: 6px;
   margin-bottom: 1rem;
 }
 .scard {
@@ -136,7 +136,7 @@ body {
   width: 100%; aspect-ratio: 4/3; background: var(--color-surface-dim);
   display: flex; align-items: center; justify-content: center;
 }
-.scard-img svg { width: 65%; height: auto; color: #888; }
+.scard-img svg { width: 80%; height: auto; color: #888; }
 .scard-name {
   padding: 4px; font-family: var(--font-sans);
   font-size: clamp(0.6rem, 2vw, 0.75rem); font-weight: 500;
@@ -523,8 +523,8 @@ body[data-theme="dark"] {
   --color-surface-dim: #1f1f23;
   --color-border: #333338;
   --color-text: #e8e8ec;
-  --color-text-muted: #b0b0b8;
-  --color-text-faint: #8a8a94;
+  --color-text-muted: #d0d0d4;
+  --color-text-faint: #b8b8c0;
 
   --color-pill-teal-bg: #0d2e25;
   --color-pill-teal-text: #6ee0b8;
