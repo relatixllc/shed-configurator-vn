@@ -35,7 +35,7 @@ export function SizePicker({
   }, [onMinSqFtChange]);
 
   return (
-    <div>
+    <div id="Size">
       <div className="font-sans text-[clamp(1.2rem,4vw,1.5rem)] font-semibold text-[var(--color-text)] mb-2.5">
         Size
       </div>
@@ -44,7 +44,7 @@ export function SizePicker({
 
       {/* Top row: Walls toggle + mode selector */}
       <div className="flex items-center gap-1.5 mb-1.5 flex-wrap">
-        <span className="font-sans text-[clamp(0.7rem,2.5vw,0.82rem)] font-semibold text-[var(--color-text-muted)]">
+        <span id="Walls" className="font-sans text-[clamp(0.7rem,2.5vw,0.82rem)] font-semibold text-[var(--color-text-muted)]">
           Walls:
         </span>
         <div className="wall-toggle">

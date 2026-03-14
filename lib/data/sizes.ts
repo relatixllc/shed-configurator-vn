@@ -37,7 +37,7 @@ export const MOWER_OPTIONS = [
   { sf: 0, name: "None" },
   { sf: 48, name: "Small" },
   { sf: 60, name: "Medium" },
-  { sf: 80, name: "Large / zero-turn" },
+  { sf: 80, name: "Zero-Turn" },
 ];
 
 export const BENCH_OPTIONS = [0, 48, 54, 60, 66, 72];

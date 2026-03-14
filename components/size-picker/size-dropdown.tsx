@@ -82,7 +82,7 @@ export function SizeDropdown({
       </div>
 
       {selectedSize && (
-        <div className="font-mono text-[clamp(0.82rem,3vw,0.95rem)] font-semibold text-[var(--color-text)] min-h-[1.4em] mt-1 break-words">
+        <div className="size-summary font-mono font-semibold text-[var(--color-text)] min-h-[1.4em] mt-1 break-words">
           {(() => {
             const [w, l] = selectedSize;
             const parts = [`${w}'x${l}'`];

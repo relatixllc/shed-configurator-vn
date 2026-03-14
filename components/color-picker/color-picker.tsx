@@ -31,7 +31,7 @@ export function ColorPicker({
   );
 
   return (
-    <div className={`mt-6 chip-${chipSize}`}>
+    <div id="Colors" className={`mt-6 chip-${chipSize}`}>
       {/* Header */}
       <div className="flex items-center gap-2 mb-2.5 flex-wrap">
         <span className="font-sans text-[clamp(1.2rem,4vw,1.5rem)] font-semibold text-[var(--color-text)]">

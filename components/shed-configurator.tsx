@@ -20,7 +20,12 @@ import { ColorPicker } from "./color-picker/color-picker";
 
 export default function ShedConfigurator() {
   // ── Theme state ──
-  const [themeMode, setThemeMode] = useState<ThemeMode>("light");
+  const [themeMode, setThemeMode] = useState<ThemeMode>(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "adaptive-dark";
+    }
+    return "adaptive-light";
+  });
   const [textSize, setTextSize] = useState<TextSize>("lg");
 
   // ── Style state ──
@@ -48,11 +53,21 @@ export default function ShedConfigurator() {
     trim: null,
   });
 
+  const scrollTo = (id: string) => {
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 8;
+      window.scrollTo({ top, behavior: "smooth" });
+    }, 150);
+  };
+
   // ── Handlers ──
   const handleSelectStyle = useCallback((index: number) => {
     setSelectedStyle(index);
     setRecommendedStyle(null);
     setHelpChoice(null);
+    scrollTo("Size");
   }, []);
 
   const handleHelpChoose = useCallback((choice: "affordable" | "space") => {
@@ -66,14 +81,18 @@ export default function ShedConfigurator() {
       setRecommendedStyle(3);
       setWallHeight(8);
     }
+    scrollTo("Size");
   }, []);
 
   const handleSelectSize = useCallback((w: number, l: number) => {
     setSelectedSize([w, l]);
+    scrollTo("SidingColor");
   }, []);
 
   const handleColorSelect = useCallback((category: ColorCategory, color: Color) => {
     setSelectedColors((prev) => ({ ...prev, [category]: color }));
+    if (category === "siding") scrollTo("RoofColor");
+    else if (category === "roof") scrollTo("TrimColor");
   }, []);
 
   // ── Theme effects ──

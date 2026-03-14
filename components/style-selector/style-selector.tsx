@@ -20,7 +20,7 @@ export function StyleSelector({
   onHelpChoose,
 }: StyleSelectorProps) {
   return (
-    <div>
+    <div id="Style">
       <div className="font-sans text-[clamp(1.2rem,4vw,1.5rem)] font-semibold text-[var(--color-text)] mb-2.5">
         Style
       </div>

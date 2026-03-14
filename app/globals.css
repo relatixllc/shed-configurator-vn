@@ -181,7 +181,7 @@ body {
 .dd-btn.open { border-color: var(--color-primary); border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .dd-btn .val {
   font-family: var(--font-mono);
-  font-size: clamp(0.68rem, 2.5vw, 0.82rem);
+  font-size: clamp(0.85rem, 3vw, 1rem);
   color: var(--color-text-faint);
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 1;
 }
@@ -313,6 +313,11 @@ body {
 }
 .sh-btn:hover { border-color: var(--color-primary); background: var(--color-primary-light); color: var(--color-primary); }
 .sh-btn.active { border-color: var(--color-primary); background: var(--color-primary); color: #fff; font-weight: 600; }
+.sh-btn.sh-btn-fit {
+  height: 32px; padding: 0 6px; border-radius: 8px;
+  font-size: clamp(0.68rem, 2.2vw, 0.78rem);
+  white-space: nowrap; min-width: 0;
+}
 .sh-result {
   font-family: var(--font-mono); font-size: clamp(0.62rem, 2.1vw, 0.72rem);
   color: var(--color-text-muted); margin-top: 6px; min-height: 1em;
@@ -320,7 +325,7 @@ body {
 }
 .sh-result .sh-count { font-weight: 500; color: var(--color-primary); }
 .sh-mower-note, .sh-bench-detail, .sh-door-note {
-  font-family: var(--font-sans); font-size: clamp(0.58rem, 2vw, 0.65rem);
+  font-family: var(--font-sans); font-size: clamp(0.72rem, 2.5vw, 0.82rem);
   color: var(--color-text-faint); font-style: italic; margin-top: 3px; min-height: 1em;
   word-break: break-word; overflow-wrap: break-word;
 }
@@ -550,3 +555,37 @@ body[data-theme="dark"] .cpill-dot.lc { box-shadow: inset 0 0 0 1px rgba(255,255
 html[data-text="sm"] { font-size: 14px; }
 html[data-text="md"] { font-size: 16px; }
 html[data-text="lg"] { font-size: 19px; }
+
+.size-summary { font-size: clamp(0.82rem, 3vw, 0.95rem); }
+html[data-text="sm"] .size-summary { font-size: 0.75rem; }
+html[data-text="lg"] .size-summary { font-size: 1.1rem; }
+html[data-text="sm"] .sh-grp-label { font-size: 0.55rem; }
+html[data-text="lg"] .sh-grp-label { font-size: 0.82rem; }
+html[data-text="sm"] .sh-label { font-size: 0.68rem; }
+html[data-text="lg"] .sh-label { font-size: 0.95rem; }
+html[data-text="sm"] .sh-btn { font-size: 0.72rem; height: 30px; padding: 0 12px; }
+html[data-text="lg"] .sh-btn { font-size: 1.05rem; height: 42px; padding: 0 20px; }
+html[data-text="sm"] .sh-btn.sh-btn-fit { height: 28px; padding: 0 4px; font-size: 0.65rem; }
+html[data-text="lg"] .sh-btn.sh-btn-fit { height: 34px; padding: 0 6px; font-size: 0.82rem; }
+html[data-text="sm"] .sh-result { font-size: 0.58rem; }
+html[data-text="lg"] .sh-result { font-size: 0.85rem; }
+html[data-text="sm"] .sh-tally { font-size: 0.58rem; }
+html[data-text="lg"] .sh-tally { font-size: 0.85rem; }
+html[data-text="sm"] .sh-mower-note,
+html[data-text="sm"] .sh-bench-detail,
+html[data-text="sm"] .sh-door-note { font-size: 0.55rem; }
+html[data-text="lg"] .sh-mower-note,
+html[data-text="lg"] .sh-bench-detail,
+html[data-text="lg"] .sh-door-note { font-size: 0.78rem; }
+html[data-text="sm"] .dd-btn .val { font-size: 0.65rem; }
+html[data-text="lg"] .dd-btn .val { font-size: 0.95rem; }
+html[data-text="sm"] .li-dim { font-size: 0.65rem; }
+html[data-text="lg"] .li-dim { font-size: 0.95rem; }
+html[data-text="sm"] .li-equiv { font-size: 0.55rem; }
+html[data-text="lg"] .li-equiv { font-size: 0.82rem; }
+html[data-text="sm"] .li-meta { font-size: 0.55rem; }
+html[data-text="lg"] .li-meta { font-size: 0.82rem; }
+html[data-text="sm"] .wg-head .wlabel { font-size: 0.68rem; }
+html[data-text="lg"] .wg-head .wlabel { font-size: 0.95rem; }
+html[data-text="sm"] .wg-head .wrange { font-size: 0.55rem; }
+html[data-text="lg"] .wg-head .wrange { font-size: 0.82rem; }

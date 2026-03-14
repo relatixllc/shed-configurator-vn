@@ -18,7 +18,7 @@ export function ColorCategory({ category, mode, groups, selectedColor, onSelect 
   const label = category.charAt(0).toUpperCase() + category.slice(1);
 
   return (
-    <div className="mt-2">
+    <div id={`${category.charAt(0).toUpperCase() + category.slice(1)}Color`} className="mt-2">
       <div className="font-sans text-[clamp(0.72rem,2.5vw,0.82rem)] font-semibold text-[var(--color-text)] mb-1">
         {label}
       </div>

@@ -50,13 +50,13 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
 
       <div className={`sh-body ${open ? "open" : ""}`}>
         {/* Storage needs */}
-        <div className="mb-2">
+        <div id="Storage" className="mb-2">
           <div className="sh-grp-label">What are you storing?</div>
-          <div className="flex gap-1.5 flex-wrap">
+          <div className="flex gap-1 flex-wrap">
             {STORAGE_OPTIONS.map((opt) => (
               <button
                 key={opt.sf}
-                className={`sh-btn ${storageSf === opt.sf && storageName === opt.name ? "active" : ""}`}
+                className={`sh-btn sh-btn-fit ${storageSf === opt.sf && storageName === opt.name ? "active" : ""}`}
                 onClick={() => { setStorageSf(opt.sf); setStorageName(opt.name); }}
               >
                 {opt.name}
@@ -66,13 +66,13 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
         </div>
 
         {/* Mower */}
-        <div className="mb-2">
+        <div id="RidingMower" className="mb-2">
           <div className="sh-grp-label">Add a riding mower?</div>
-          <div className="flex gap-1.5 flex-wrap">
+          <div className="flex gap-1">
             {MOWER_OPTIONS.map((opt) => (
               <button
                 key={opt.sf}
-                className={`sh-btn ${mowerSf === opt.sf && mowerName === opt.name ? "active" : ""}`}
+                className={`sh-btn sh-btn-fit flex-1 ${mowerSf === opt.sf && mowerName === opt.name ? "active" : ""}`}
                 onClick={() => {
                   setMowerSf(opt.sf);
                   setMowerName(opt.name);
@@ -92,16 +92,16 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
 
         {/* Door (only when mower selected) */}
         {mowerSf > 0 && (
-          <div className="mb-2">
+          <div id="MowerDoor" className="mb-2">
             <div className="sh-grp-label">Door for mower access</div>
             <div className="font-sans text-[clamp(0.58rem,2vw,0.65rem)] font-semibold text-[var(--color-text-muted)] mb-0.5">
               Front door
             </div>
-            <div className="flex gap-1.5 flex-wrap">
+            <div className="flex gap-1">
               {DOOR_OPTIONS.front.map((opt) => (
                 <button
                   key={opt.key}
-                  className={`sh-btn ${selectedDoor === opt.key ? "active" : ""}`}
+                  className={`sh-btn sh-btn-fit flex-1 ${selectedDoor === opt.key ? "active" : ""}`}
                   onClick={() => setSelectedDoor(opt.key)}
                 >
                   {opt.label}
@@ -129,16 +129,16 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
         )}
 
         {/* Workbench */}
-        <div className="mb-2">
+        <div id="Workbench" className="mb-2">
           <div className="sh-grp-label">Add a workbench?</div>
-          <div className="flex gap-1.5 flex-wrap">
+          <div className="flex gap-1">
             {BENCH_OPTIONS.map((w) => (
               <button
                 key={w}
-                className={`sh-btn ${benchW === w ? "active" : ""}`}
+                className={`sh-btn sh-btn-fit flex-1 ${benchW === w ? "active" : ""}`}
                 onClick={() => setBenchW(w)}
               >
-                {w === 0 ? "None" : `${w}"`}
+                {w === 0 ? "No" : `${w}"`}
               </button>
             ))}
           </div>
@@ -148,7 +148,7 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
         </div>
 
         {/* Shelving */}
-        <div className="mb-2">
+        <div id="Shelving" className="mb-2">
           <div className="sh-grp-label">Add shelving?</div>
           <div>
             <select
