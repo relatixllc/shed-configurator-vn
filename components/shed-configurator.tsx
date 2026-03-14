@@ -69,7 +69,7 @@ export default function ShedConfigurator() {
   }, []);
 
   return (
-    <div className="max-w-[420px] w-full min-w-0 overflow-hidden break-words">
+    <div className="max-w-[420px] mx-auto overflow-hidden" style={{ contain: "inline-size" }}>
       <StyleSelector
         selectedIndex={selectedStyle}
         recommendedIndex={recommendedStyle}
