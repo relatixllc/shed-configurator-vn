@@ -14,7 +14,7 @@ export function QuantityStepper({ value, min = 1, max = 10, onChange }: Quantity
         Qty:
       </span>
       <button
-        className="w-[26px] h-[26px] rounded-md border border-[var(--color-border)] bg-white text-sm font-medium text-[var(--color-text)] cursor-pointer flex items-center justify-center transition-all select-none p-0 leading-none hover:border-[var(--color-primary)] hover:bg-[var(--color-primary-light)] hover:text-[var(--color-primary)] active:scale-95"
+        className="w-[26px] h-[26px] rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-sm font-medium text-[var(--color-text)] cursor-pointer flex items-center justify-center transition-all select-none p-0 leading-none hover:border-[var(--color-primary)] hover:bg-[var(--color-primary-light)] hover:text-[var(--color-primary)] active:scale-95"
         onClick={() => value > min && onChange(value - 1)}
       >
         -
@@ -23,7 +23,7 @@ export function QuantityStepper({ value, min = 1, max = 10, onChange }: Quantity
         {value}
       </span>
       <button
-        className="w-[26px] h-[26px] rounded-md border border-[var(--color-border)] bg-white text-sm font-medium text-[var(--color-text)] cursor-pointer flex items-center justify-center transition-all select-none p-0 leading-none hover:border-[var(--color-primary)] hover:bg-[var(--color-primary-light)] hover:text-[var(--color-primary)] active:scale-95"
+        className="w-[26px] h-[26px] rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-sm font-medium text-[var(--color-text)] cursor-pointer flex items-center justify-center transition-all select-none p-0 leading-none hover:border-[var(--color-primary)] hover:bg-[var(--color-primary-light)] hover:text-[var(--color-primary)] active:scale-95"
         onClick={() => value < max && onChange(value + 1)}
       >
         +

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import type {
   Color,
   ColorCategory,
@@ -9,12 +9,20 @@ import type {
   ColorGroupMode,
   ChipSize,
   SizeDisplayMode,
+  ThemeMode,
+  TextSize,
 } from "@/lib/types";
+import { hexToHsl } from "@/lib/utils/color-utils";
+import { ThemeModeSelector } from "./ui/theme-mode-selector";
 import { StyleSelector } from "./style-selector/style-selector";
 import { SizePicker } from "./size-picker/size-picker";
 import { ColorPicker } from "./color-picker/color-picker";
 
 export default function ShedConfigurator() {
+  // ── Theme state ──
+  const [themeMode, setThemeMode] = useState<ThemeMode>("light");
+  const [textSize, setTextSize] = useState<TextSize>("md");
+
   // ── Style state ──
   const [selectedStyle, setSelectedStyle] = useState<number | null>(null);
   const [recommendedStyle, setRecommendedStyle] = useState<number | null>(null);
@@ -68,8 +76,61 @@ export default function ShedConfigurator() {
     setSelectedColors((prev) => ({ ...prev, [category]: color }));
   }, []);
 
+  // ── Theme effects ──
+  const isDark = themeMode === "dark" || themeMode === "adaptive-dark";
+  const isAdaptive = themeMode === "adaptive-light" || themeMode === "adaptive-dark";
+
+  useEffect(() => {
+    document.body.setAttribute("data-theme", isDark ? "dark" : "light");
+    return () => document.body.removeAttribute("data-theme");
+  }, [isDark]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-text", textSize);
+    return () => document.documentElement.removeAttribute("data-text");
+  }, [textSize]);
+
+  const tintColor = useMemo(() => {
+    return selectedColors.siding ?? selectedColors.roof ?? selectedColors.trim;
+  }, [selectedColors]);
+
+  useEffect(() => {
+    const props = [
+      "--color-bg", "--color-bg-hover", "--color-bg-muted",
+      "--color-surface", "--color-surface-dim", "--color-border", "--color-primary-light",
+    ];
+
+    if (!isAdaptive || !tintColor) {
+      props.forEach((p) => document.body.style.removeProperty(p));
+      return;
+    }
+
+    const { h, s } = hexToHsl(tintColor.hex);
+    const cap = (max: number) => Math.round(Math.min(s * 100, max));
+
+    if (isDark) {
+      document.body.style.setProperty("--color-bg", `hsl(${h}, ${cap(15)}%, 12%)`);
+      document.body.style.setProperty("--color-bg-hover", `hsl(${h}, ${cap(15)}%, 16%)`);
+      document.body.style.setProperty("--color-bg-muted", `hsl(${h}, ${cap(12)}%, 14%)`);
+      document.body.style.setProperty("--color-surface", `hsl(${h}, ${cap(12)}%, 18%)`);
+      document.body.style.setProperty("--color-surface-dim", `hsl(${h}, ${cap(10)}%, 15%)`);
+      document.body.style.setProperty("--color-border", `hsl(${h}, ${cap(10)}%, 25%)`);
+      document.body.style.setProperty("--color-primary-light", `hsl(${h}, ${cap(20)}%, 22%)`);
+    } else {
+      document.body.style.setProperty("--color-bg", `hsl(${h}, ${cap(30)}%, 97%)`);
+      document.body.style.setProperty("--color-bg-hover", `hsl(${h}, ${cap(25)}%, 94%)`);
+      document.body.style.setProperty("--color-bg-muted", `hsl(${h}, ${cap(20)}%, 96%)`);
+      document.body.style.setProperty("--color-surface", `hsl(${h}, ${cap(25)}%, 99%)`);
+      document.body.style.setProperty("--color-surface-dim", `hsl(${h}, ${cap(20)}%, 95%)`);
+      document.body.style.setProperty("--color-border", `hsl(${h}, ${cap(15)}%, 88%)`);
+      document.body.style.setProperty("--color-primary-light", `hsl(${h}, ${cap(35)}%, 93%)`);
+    }
+  }, [isAdaptive, isDark, tintColor]);
+
   return (
     <div className="max-w-[420px] mx-auto overflow-hidden" style={{ contain: "inline-size" }}>
+      <ThemeModeSelector mode={themeMode} textSize={textSize} onChange={setThemeMode} onTextSizeChange={setTextSize} />
+
       <StyleSelector
         selectedIndex={selectedStyle}
         recommendedIndex={recommendedStyle}

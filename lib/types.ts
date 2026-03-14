@@ -31,6 +31,8 @@ export interface ShedStyle {
   key: string;
 }
 
+export type ThemeMode = "light" | "dark" | "adaptive-light" | "adaptive-dark";
+export type TextSize = "sm" | "md" | "lg";
 export type SizeDisplayMode = "all" | "a" | "b" | "c" | "d";
 
 export interface EquivTier {

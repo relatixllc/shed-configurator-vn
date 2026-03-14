@@ -44,12 +44,12 @@ export const BENCH_OPTIONS = [0, 48, 54, 60, 66, 72];
 
 export const SHELVING_OPTIONS = [
   { value: "0", label: "None", width: 0, depth: 0, sf: 0, cf: 0 },
-  { value: "36x18", label: '36"x18"x69" — 4.5sf, 26cf', width: 36, depth: 18, sf: 4.5, cf: 26 },
-  { value: "36x24", label: '36"x24"x69" — 6sf, 35cf', width: 36, depth: 24, sf: 6, cf: 35 },
-  { value: "48x18", label: '48"x18"x69" — 6sf, 35cf', width: 48, depth: 18, sf: 6, cf: 35 },
-  { value: "48x24", label: '48"x24"x69" — 8sf, 46cf', width: 48, depth: 24, sf: 8, cf: 46 },
-  { value: "60x18", label: '60"x18"x69" — 7.5sf, 43cf', width: 60, depth: 18, sf: 7.5, cf: 43 },
-  { value: "72x24", label: '72"x24"x69" — 12sf, 69cf', width: 72, depth: 24, sf: 12, cf: 69 },
+  { value: "36x18", label: '36×18 — 4.5sf', width: 36, depth: 18, sf: 4.5, cf: 26 },
+  { value: "36x24", label: '36×24 — 6sf', width: 36, depth: 24, sf: 6, cf: 35 },
+  { value: "48x18", label: '48×18 — 6sf', width: 48, depth: 18, sf: 6, cf: 35 },
+  { value: "48x24", label: '48×24 — 8sf', width: 48, depth: 24, sf: 8, cf: 46 },
+  { value: "60x18", label: '60×18 — 7.5sf', width: 60, depth: 18, sf: 7.5, cf: 43 },
+  { value: "72x24", label: '72×24 — 12sf', width: 72, depth: 24, sf: 12, cf: 69 },
 ];
 
 export const DOOR_OPTIONS = {

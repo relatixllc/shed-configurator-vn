@@ -82,7 +82,7 @@ export function SizeDropdown({
       </div>
 
       {selectedSize && (
-        <div className="font-mono text-[clamp(0.68rem,2.5vw,0.8rem)] text-[var(--color-text-muted)] min-h-[1.4em] mt-1 break-words">
+        <div className="font-mono text-[clamp(0.82rem,3vw,0.95rem)] font-semibold text-[var(--color-text)] min-h-[1.4em] mt-1 break-words">
           {(() => {
             const [w, l] = selectedSize;
             const parts = [`${w}'x${l}'`];
@@ -214,7 +214,7 @@ function RenderCapacity({ showEquiv, minSqFt, onSelect, meta }: RenderProps) {
                 <div
                   key={l}
                   className="li"
-                  style={{ flexDirection: "column", alignItems: "stretch", gap: 3, padding: "6px 12px 6px 30px" }}
+                  style={{ flexDirection: "column", alignItems: "stretch", gap: 3, padding: "6px 8px 6px 10px" }}
                   onClick={(e) => { e.stopPropagation(); onSelect(w, l); }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: 6 }}>

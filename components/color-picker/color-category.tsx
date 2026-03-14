@@ -29,7 +29,7 @@ export function ColorCategory({ category, mode, groups, selectedColor, onSelect 
       {mode === "dropdown" && <SwatchDropdown groups={groups} selectedColor={selectedColor} onSelect={onSelect} category={category} />}
 
       {selectedColor && mode !== "dropdown" && (
-        <div className="font-mono text-[clamp(0.65rem,2.2vw,0.75rem)] text-[var(--color-text-muted)] mt-0.5 min-h-[1.2em] break-words">
+        <div className="font-mono text-[clamp(0.65rem,2.2vw,0.75rem)] text-[var(--color-text)] mt-0.5 min-h-[1.2em] break-words">
           {selectedColor.name}
         </div>
       )}

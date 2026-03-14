@@ -52,7 +52,7 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
         {/* Storage needs */}
         <div className="mb-2">
           <div className="sh-grp-label">What are you storing?</div>
-          <div className="flex gap-1 flex-wrap">
+          <div className="flex gap-1.5 flex-wrap">
             {STORAGE_OPTIONS.map((opt) => (
               <button
                 key={opt.sf}
@@ -68,7 +68,7 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
         {/* Mower */}
         <div className="mb-2">
           <div className="sh-grp-label">Add a riding mower?</div>
-          <div className="flex gap-1 flex-wrap">
+          <div className="flex gap-1.5 flex-wrap">
             {MOWER_OPTIONS.map((opt) => (
               <button
                 key={opt.sf}
@@ -97,7 +97,7 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
             <div className="font-sans text-[clamp(0.58rem,2vw,0.65rem)] font-semibold text-[var(--color-text-muted)] mb-0.5">
               Front door
             </div>
-            <div className="flex gap-1 flex-wrap">
+            <div className="flex gap-1.5 flex-wrap">
               {DOOR_OPTIONS.front.map((opt) => (
                 <button
                   key={opt.key}
@@ -111,7 +111,7 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
             <div className="font-sans text-[clamp(0.58rem,2vw,0.65rem)] font-semibold text-[var(--color-text-muted)] mb-0.5 mt-1.5">
               Side door
             </div>
-            <div className="flex gap-1 flex-wrap">
+            <div className="flex gap-1.5 flex-wrap">
               {DOOR_OPTIONS.side.map((opt) => (
                 <button
                   key={opt.key}
@@ -131,7 +131,7 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
         {/* Workbench */}
         <div className="mb-2">
           <div className="sh-grp-label">Add a workbench?</div>
-          <div className="flex gap-1 flex-wrap">
+          <div className="flex gap-1.5 flex-wrap">
             {BENCH_OPTIONS.map((w) => (
               <button
                 key={w}
