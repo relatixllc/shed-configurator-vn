@@ -116,8 +116,8 @@ body {
 /* ── Style cards ───────────────────────────────────────────── */
 .styles {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
-  gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+  gap: 4px;
   margin-bottom: 1rem;
 }
 .scard {
@@ -201,7 +201,7 @@ body {
 
 /* ── List items ────────────────────────────────────────────── */
 .li {
-  display: flex; align-items: center; padding: 6px 8px 6px 24px;
+  display: flex; align-items: center; padding: 6px 8px 6px 12px;
   cursor: pointer; transition: background 0.1s; gap: 4px;
   min-height: 34px; min-width: 0; flex-wrap: wrap;
 }
@@ -298,7 +298,7 @@ body {
   letter-spacing: 0.04em; margin-bottom: 4px;
 }
 .sh-btn {
-  padding: 5px 10px; border-radius: 8px; border: 1px solid var(--color-border);
+  padding: 4px 8px; border-radius: 8px; border: 1px solid var(--color-border);
   background: #fff; font-family: var(--font-sans);
   font-size: clamp(0.62rem, 2.1vw, 0.7rem); font-weight: 500;
   color: var(--color-text); cursor: pointer; transition: all 0.15s;
@@ -346,8 +346,8 @@ body {
 /* ── Help me choose buttons ───────────────────────────────── */
 .help-btn {
   display: flex; align-items: center; justify-content: center; gap: 4px;
-  flex: 1 1 auto; min-width: 0;
-  padding: 5px 10px; border-radius: 8px; border: 1px solid var(--color-border);
+  flex: 1 1 100px; min-width: 0;
+  padding: 5px 8px; border-radius: 8px; border: 1px solid var(--color-border);
   background: #fff; font-family: var(--font-sans);
   font-size: clamp(0.62rem, 2.2vw, 0.7rem); font-weight: 500;
   color: var(--color-text); cursor: pointer; transition: all 0.15s;
@@ -361,8 +361,8 @@ body {
 /* ── Color swatches ────────────────────────────────────────── */
 .grid-swatches {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-  gap: 3px;
+  grid-template-columns: repeat(auto-fill, minmax(24px, 1fr));
+  gap: 2px;
 }
 .csw {
   width: 100%; aspect-ratio: 1; border-radius: 5px; cursor: pointer;
@@ -459,14 +459,14 @@ body {
 .grp-wrap:last-child { margin-bottom: 0; }
 .grp-swatches {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
-  gap: 3px;
+  grid-template-columns: repeat(auto-fill, minmax(24px, 1fr));
+  gap: 2px;
 }
 
 /* ── Chip size variants ────────────────────────────────────── */
-.chip-sm .grid-swatches, .chip-sm .grp-swatches { grid-template-columns: repeat(auto-fill, minmax(28px, 1fr)); gap: 2px; }
-.chip-md .grid-swatches, .chip-md .grp-swatches { grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 3px; }
-.chip-lg .grid-swatches, .chip-lg .grp-swatches { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 4px; }
+.chip-sm .grid-swatches, .chip-sm .grp-swatches { grid-template-columns: repeat(auto-fill, minmax(20px, 1fr)); gap: 2px; }
+.chip-md .grid-swatches, .chip-md .grp-swatches { grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)); gap: 2px; }
+.chip-lg .grid-swatches, .chip-lg .grp-swatches { grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 3px; }
 .chip-sm .strip-sw { height: 22px; }
 .chip-md .strip-sw { height: 32px; }
 .chip-lg .strip-sw { height: 44px; }

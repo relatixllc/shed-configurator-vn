@@ -69,7 +69,7 @@ export default function ShedConfigurator() {
   }, []);
 
   return (
-    <div className="w-full min-w-0 overflow-hidden break-words" style={{ maxWidth: "min(420px, calc(100vw - 1rem))" }}>
+    <div className="max-w-[420px] w-full min-w-0 overflow-hidden break-words">
       <StyleSelector
         selectedIndex={selectedStyle}
         recommendedIndex={recommendedStyle}
