@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback } from "react";
 
 export function LoftedBarn() {
-  const [rotated, setRotated] = useState(true);
+  const [rotated, setRotated] = useState(false);
   const svgRef = useRef<SVGSVGElement>(null);
   const planGroupRef = useRef<SVGGElement>(null);
   const shelfTipRef = useRef<SVGGElement>(null);
@@ -359,8 +359,10 @@ export function LoftedBarn() {
                 onMouseLeave={hideWbTip}
                 onTouchStart={(e) => { e.stopPropagation(); if (wbTipOnRef.current) hideWbTip(); else { hideTip(); showWbTip(); } }}
               >
+                <rect x="345" y="93" width="110" height="55" fill="rgba(0,0,0,0)" stroke="none" />
                 <rect x="350" y="97" width="100" height="45" fill="#d4c9a8" stroke="#000" strokeWidth="2" />
                 <rect x="350" y="110" width="10" height="16" fill="#aaa" stroke="#000" strokeWidth="0.8" />
+                <text x="400" y="122" textAnchor="middle" fill="#000" fontSize="14" fontWeight="500" opacity="0.5">WORKBENCH</text>
               </g>
 
               {/* Shelving */}
@@ -514,8 +516,6 @@ export function LoftedBarn() {
               <line x1="452" y1="383" x2="468" y2="383" stroke="#000" strokeWidth="0.6" />
               <text x="478" y="348" fill="#000" fontSize="14" fontWeight="600" transform="rotate(-90 478 348)">~3&apos;-3&quot;</text>
 
-              {/* Workbench label */}
-              <text x="400" y="122" textAnchor="middle" fill="#000" fontSize="14" fontWeight="500" opacity="0.5">WORKBENCH</text>
             </g>
 
             {/* Tooltips (outside planGroup so they don't rotate) */}
