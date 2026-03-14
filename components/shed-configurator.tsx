@@ -24,12 +24,12 @@ export default function ShedConfigurator() {
   const [textSize, setTextSize] = useState<TextSize>("lg");
 
   // ── Style state ──
-  const [selectedStyle, setSelectedStyle] = useState<number | null>(null);
-  const [recommendedStyle, setRecommendedStyle] = useState<number | null>(null);
-  const [helpChoice, setHelpChoice] = useState<"affordable" | "space" | null>(null);
+  const [selectedStyle, setSelectedStyle] = useState<number | null>(3);
+  const [recommendedStyle, setRecommendedStyle] = useState<number | null>(3);
+  const [helpChoice, setHelpChoice] = useState<"affordable" | "space" | null>("space");
 
   // ── Size state ──
-  const [wallHeight, setWallHeight] = useState<6 | 8>(6);
+  const [wallHeight, setWallHeight] = useState<6 | 8>(8);
   const [sizeMode, setSizeMode] = useState<SizeDisplayMode>("all");
   const [showArea, setShowArea] = useState(true);
   const [showVolume, setShowVolume] = useState(false);
