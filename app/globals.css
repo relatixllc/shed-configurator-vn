@@ -170,9 +170,9 @@ body {
 /* ── Dropdown ──────────────────────────────────────────────── */
 .dd-anchor { position: relative; display: block; }
 .dd-btn {
-  display: flex; align-items: center; gap: 6px;
+  display: flex; align-items: center; gap: 4px;
   background: #fff; border: 1px solid var(--color-border);
-  border-radius: 8px; padding: 8px 10px; cursor: pointer;
+  border-radius: 8px; padding: 6px 8px; cursor: pointer;
   transition: border-color 0.15s; width: 100%; min-width: 0; overflow: hidden;
 }
 .dd-btn:hover { border-color: #bbb; }
@@ -201,9 +201,9 @@ body {
 
 /* ── List items ────────────────────────────────────────────── */
 .li {
-  display: flex; align-items: center; padding: 6px 8px 6px 12px;
-  cursor: pointer; transition: background 0.1s; gap: 4px;
-  min-height: 34px; min-width: 0; flex-wrap: wrap;
+  display: flex; align-items: center; padding: 4px 6px 4px 10px;
+  cursor: pointer; transition: background 0.1s; gap: 3px;
+  min-height: 28px; min-width: 0; flex-wrap: wrap;
 }
 .li:hover { background: var(--color-primary-light); }
 .li-left { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
@@ -234,7 +234,7 @@ body {
 /* ── Width groups ──────────────────────────────────────────── */
 .wg { cursor: pointer; user-select: none; }
 .wg-head {
-  display: flex; align-items: center; padding: 7px 8px; gap: 4px;
+  display: flex; align-items: center; padding: 5px 6px; gap: 3px;
   transition: background 0.1s; min-width: 0; overflow: hidden;
 }
 .wg-head:hover { background: var(--color-bg-muted); }
