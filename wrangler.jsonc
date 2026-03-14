@@ -1,7 +1,9 @@
 {
   "name": "shed-configurator-vn",
+  "main": "./worker/index.ts",
   "compatibility_date": "2026-03-01",
   "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
   "routes": [
     { "pattern": "shedconfigurator.com", "custom_domain": true },
     { "pattern": "www.shedconfigurator.com", "custom_domain": true }
