@@ -111,11 +111,11 @@ export function SizeHelper({ onMinSqFtChange }: SizeHelperProps) {
             <div className="font-sans text-[clamp(0.58rem,2vw,0.65rem)] font-semibold text-[var(--color-text-muted)] mb-0.5 mt-1.5">
               Side door
             </div>
-            <div className="flex gap-1.5 flex-wrap">
+            <div className="flex gap-1">
               {DOOR_OPTIONS.side.map((opt) => (
                 <button
                   key={opt.key}
-                  className={`sh-btn ${selectedDoor === opt.key ? "active" : ""}`}
+                  className={`sh-btn sh-btn-fit ${selectedDoor === opt.key ? "active" : ""}`}
                   onClick={() => setSelectedDoor(opt.key)}
                 >
                   {opt.label}
