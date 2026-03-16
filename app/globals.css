@@ -733,3 +733,33 @@ html[data-text="lg"] .wg-head .wrange { font-size: 0.82rem; }
 .wb-area:hover rect:first-child { stroke: #c8553d; stroke-width: 3; }
 .loft-area:hover { opacity: 0.9; }
 .mower-area { cursor: pointer; }
+.bike-area { cursor: pointer; }
+.tool-area { cursor: pointer; }
+
+/* ── Gallery (floor plan pages) ── */
+.fp-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.8rem;
+}
+@media (max-width: 600px) { .fp-gallery { grid-template-columns: 1fr; } }
+.fp-gallery-card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.fp-gallery-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+.fp-gallery-label {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: center;
+}
